@@ -60,7 +60,7 @@ $(document).ready(function() {
         alertDiv.style.transform = 'translate(-50%, -50%)';
         alertDiv.style.background = '#4CAF50';
         alertDiv.style.color = '#034706';
-        alertDiv.style.padding = '10px';
+        alertDiv.style.padding = '12px';
         alertDiv.style.borderRadius = '8px';
 
         // Texto do alerta
