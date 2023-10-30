@@ -1,0 +1,81 @@
+/* Reset de estilos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #034706;
+    background-color: #4CAF50;
+    padding: 20px 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Estilização do container do formulário */
+#task-form {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px; /* Define a largura máxima do container do formulário */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Estilização dos campos do formulário */
+#new-task {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 400px; /* Define a largura máxima da lista de tarefas */
+    margin: 20px auto;
+}
+
+#task-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#task-list li.completed {
+    text-decoration: line-through;
+    background-color: #9dfc21;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#task-list li:hover {
+    background-color: #e0e0e0;
+}
