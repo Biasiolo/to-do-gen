@@ -11,7 +11,7 @@ Este é um projeto simples de um "Gerador de Checklist" que permite adicionar, m
 
 ## Demonstração
 
-Para experimentar o Gerador de Checklist, você pode acessar a demonstração [aqui](https://biasiolo.github.io/Gerador_de_Checklist/).
+Para experimentar o Gerador de Checklist, você pode acessar a demonstração [aqui](https://gerador-de-checklist.vercel.app/).
 
 ## Como usar
 
