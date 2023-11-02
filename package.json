@@ -1,0 +1,14 @@
+{
+  "name": "agenda-tarefas",
+  "version": "1.0.0",
+  "description": "Checklist generator",
+  "main": "main.js",
+  "keywords": [
+    "checklist_generator",
+    "javascript",
+    "plugin_checklist",
+    "front-end"
+  ],
+  "author": "Biasiolo",
+  "license": "MIT"
+}

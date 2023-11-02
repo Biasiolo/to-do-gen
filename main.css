@@ -57,7 +57,6 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 12px;
-
 }
 
 #task-list {
@@ -74,6 +73,28 @@ button {
     border: 1px solid #ccc;
     cursor: pointer;
     border-radius: 5px;
+    position: relative; /* Tornar a posição relativa para elementos filhos */
+}
+
+/* Estilização do botão "X" nas tarefas */
+#task-list li .delete-button {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    background-color: #9c0a0a;
+    color: #fff;
+    border: none;
+    padding: 1px 2px;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+    width: 16px; /* Largura fixa */
+    height: 16px; /* Altura fixa */
+}
+
+#task-list li:hover .delete-button {
+    display: block; /* Mostrar ao passar o mouse sobre a tarefa */
 }
 
 #task-list li.completed {

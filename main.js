@@ -1,58 +1,91 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var tasks = [];
+    var completedTasks = [];
 
-    // Quando o formulário é submetido impede o envio do formulário padrão
-    $('#task-form').submit(function(e) {
-        e.preventDefault(); 
+    function updateTaskList() {
+        $('#task-list').empty();
+        tasks.forEach(function (task, index) {
+            var listItem = $('<li><i class="fas fa-arrow-right"></i> ' + task + '<button class="delete-button">X</button></li>');
+            if (completedTasks.indexOf(index) !== -1) {
+                listItem.addClass('completed');
+            }
 
-        // Obtém o valor do campo de entrada
-        var taskName = $('#new-task').val();
-
-        if (taskName) {
-            // Cria um elemento <li> que contenha a tarefa e o ícone de seta
-            var listItem = $('<li><i class="fas fa-arrow-right"></i>' + "   " + taskName + '</li>');
-
-            // Adiciona a tarefa à lista
-            $('#task-list').append(listItem);
-            $('#new-task').val(''); // Limpa o campo de entrada
-
-            // Adiciona a tarefa ao array
-            tasks.push(taskName);
-
-            // Adiciona um ouvinte de eventos de clique para a nova tarefa
-            listItem.click(function() {
-                $(this).toggleClass('completed');
+            listItem.click(function () {
+                if (listItem.hasClass('completed')) {
+                    listItem.removeClass('completed');
+                    var taskIndex = completedTasks.indexOf(index);
+                    if (taskIndex !== -1) {
+                        completedTasks.splice(taskIndex, 1);
+                    }
+                } else {
+                    listItem.addClass('completed');
+                    completedTasks.push(index);
+                }
+                saveTasksToCookies();
             });
+
+            listItem.find('.delete-button').click(function (e) {
+                e.stopPropagation();
+                var taskIndex = tasks.indexOf(task);
+                if (taskIndex !== -1) {
+                    tasks.splice(taskIndex, 1);
+                    if (completedTasks.indexOf(index) !== -1) {
+                        completedTasks.splice(completedTasks.indexOf(index), 1);
+                    }
+                    listItem.remove();
+                    saveTasksToCookies();
+                }
+            });
+
+            $('#task-list').append(listItem);
+        });
+    }
+
+    function saveTasksToCookies() {
+        var tasksData = JSON.stringify({ tasks: tasks, completedTasks: completedTasks });
+        document.cookie = 'tasksData=' + tasksData;
+    }
+
+    function loadTasksFromCookies() {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.startsWith('tasksData=')) {
+                var tasksData = cookie.substring('tasksData='.length);
+                var parsedData = JSON.parse(tasksData);
+                tasks = parsedData.tasks || [];
+                completedTasks = parsedData.completedTasks || [];
+                updateTaskList();
+                break;
+            }
+        }
+    }
+
+    loadTasksFromCookies();
+
+    $('#task-form').submit(function (e) {
+        e.preventDefault();
+        var taskName = $('#new-task').val();
+        if (taskName) {
+            tasks.push(taskName);
+            saveTasksToCookies();
+            updateTaskList();
+            $('#new-task').val('');
         }
     });
 
-    // Quando o botão "Salvar Tarefas" é clicado
-    $('#save-tasks').click(function() {
-        // Verifica se há tarefas para salvar
-        if (tasks.length > 0) {
-            // Cria um texto a partir do array de tarefas
-            var tasksText = tasks.join('\n');
-
-            // Cria um objeto Blob para salvar o texto em um arquivo .txt
-            var blob = new Blob([tasksText], { type: "text/plain" });
-
-            // Cria um link para download
-            var a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'tarefas.txt';
-
-            // Simula um clique no link para iniciar o download
-            a.click();
-
-            // Libera a URL do Blob
-            URL.revokeObjectURL(a.href);
-
-            showSuccessAlert();
-        }
+    $('#save-tasks').click(function () {
+        var tasksText = tasks.join('\n');
+        var blob = new Blob([tasksText], { type: "text/plain" });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'tasks.txt';
+        a.click();
+        URL.revokeObjectURL(a.href);
+        showSuccessAlert();
     });
 
     function showSuccessAlert() {
-        // Cria um elemento para o alerta centralizado
         const alertDiv = document.createElement('div');
         alertDiv.style.position = 'fixed';
         alertDiv.style.top = '50%';
@@ -62,16 +95,13 @@ $(document).ready(function() {
         alertDiv.style.color = '#034706';
         alertDiv.style.padding = '12px';
         alertDiv.style.borderRadius = '8px';
-
-        // Texto do alerta
         alertDiv.innerHTML = 'Tarefas salvas com sucesso!';
-
-        // Adicione o alerta ao corpo do documento
         document.body.appendChild(alertDiv);
-
-        // Remova o alerta após alguns segundos 
-        setTimeout(function() {
+        setTimeout(function () {
             document.body.removeChild(alertDiv);
-        }, 3000); // 3000 milissegundos (3 segundos)
+        }, 3000);
     }
 });
+
+
+
