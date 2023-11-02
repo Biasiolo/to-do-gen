@@ -1,35 +1,33 @@
-# Gerador de Checklist
+# Checklist Generator
 
-Este é um projeto simples de um "Gerador de Checklist" que permite adicionar, marcar e desmarcar tarefas, bem como salvar a lista de tarefas em um arquivo .txt. O projeto utiliza jQuery para manipulação do DOM e FontAwesome para ícones.
+## Description
+The Checklist Generator is a simple web application for creating and managing checklists. You can easily add, mark as completed, and delete tasks in your checklist. Your checklist data is stored in cookies, making it persistent even after you close your browser.
 
-## Funcionalidades
+## Features
+- Add new tasks to your checklist.
+- Mark tasks as completed by clicking on them.
+- Delete tasks by clicking the delete button.
+- Save your checklist to a text file for future reference.
+- Persistent data storage using cookies.
+- User-friendly and intuitive interface.
 
-- Adicione tarefas à lista com a opção de marcá-las como concluídas.
-- Marque ou desmarque as tarefas com um simples clique.
-- Salve a lista de tarefas em um arquivo .txt com um único clique.
-- Receba um alerta de confirmação após salvar as tarefas com sucesso.
+## Usage
+1. Visit the [Checklist Generator](https://gerador-de-checklist.vercel.app/) web page.
+2. Enter a task in the "Add new task" input field.
+3. Click the "Add" button to add the task to your checklist.
+4. Click on a task to mark it as completed.
+5. Click the "X" button to delete a task.
+6. Click the "Save Tasks" button to download your checklist as a text file.
 
-## Demonstração
+## Contributing
+1. Fork the repository on GitHub.
+2. Clone the fork to your local machine.
+3. Create a new branch for your feature or bug fix.
+4. Make your changes and commit them.
+5. Push to your fork and submit a pull request.
 
-Para experimentar o Gerador de Checklist, você pode acessar a demonstração [aqui](https://gerador-de-checklist.vercel.app/).
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Como usar
-
-1. Digite o nome da tarefa na caixa de texto "Adicionar nova tarefa".
-2. Clique em "Adicionar" para adicionar a tarefa à lista.
-3. Clique em uma tarefa na lista para marcá-la como concluída (linha através do texto) ou desmarcá-la.
-4. Para salvar a lista de tarefas como um arquivo .txt, clique no botão "Salvar Tarefas".
-
-## Contribuição
-
-Se você quiser contribuir para este projeto, fique à vontade para abrir um pull request ou relatar problemas.
-
-## Autor
-
-Este projeto foi criado por [Biasiolo](https://github.com/Biasiolo).
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
-
-Aproveite o Gerador de Checklist!
+## Author
+- [Biasiolo](https://github.com/Biasiolo)
