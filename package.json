@@ -4,10 +4,11 @@
   "description": "Checklist generator",
   "main": "main.js",
   "keywords": [
-    "checklist_generator",
-    "javascript",
-    "plugin_checklist",
-    "front-end"
+    "Javascript",
+    "Checklist",
+    "Generator",
+    "PHP",
+    "WordPress"
   ],
   "author": "Biasiolo",
   "license": "MIT"
