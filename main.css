@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Encode Sans SC', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #0c0c0c;
     margin: 0;
     padding: 0;
@@ -23,7 +24,6 @@ h1 {
     /* Contorno na fonte (2px, cor escura) */
     color: 50%;
     /* Torna o texto transparente para que o contorno seja visível */
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Estilização do container do formulário */
@@ -32,7 +32,7 @@ h1 {
     margin: 12px auto;
     max-width: 70vw;
     /* Define a largura máxima do container do formulário */
-    background-color: rgba(5, 5, 5, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
     padding: 2em;
     border-radius: 10px;
@@ -44,7 +44,6 @@ h1 {
 
 #task-form p {
     margin-bottom: 1em;
-    font-family: 'Courier New', Courier, monospace;
     font-size: 1.2em;
     font-weight: 600;
     color:#03fc0f
@@ -64,7 +63,7 @@ h1 {
 }
 
 button {
-    background-color: rgb(2, 2, 2);
+    background-color: rgba(0, 0, 0, 0.8);
     color: #03fc0f;
     border: 2px solid #03fc0f;
     padding: 8px 30px;
@@ -77,7 +76,7 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.8em;
-    margin-top: 1em;
+    margin: 8px 15px;
     display: inline;
     flex-direction: row;
 
@@ -106,14 +105,16 @@ button:hover {
 }
 
 #task-list li {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
+
     padding: 20px;
     /* Reduzi o padding para evitar a distorção */
     margin: 0.5em;
     border: 1px solid #03fc0f;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 300;
     box-shadow: 0 0 5px #03fc0f;
     color: #03fc0f;
     text-transform: uppercase;
@@ -126,7 +127,7 @@ button:hover {
     /* Adiciona layout flexível ao li */
     flex-direction: column;
     /* Alinha os itens verticalmente */
-    height: 120px;
+    height: 130px;
     /* Altura fixa para os cards */
     position: relative;
     /* Adiciona posição relativa para uso do position absolute no botão */
@@ -166,7 +167,7 @@ button:hover {
     background-color: #03fc0f;
     font-weight: 700;
     transform: scale(0.8);
-    color: black;
+    color: #1f0142;
 }
 
 #task-list li:hover {
@@ -211,7 +212,6 @@ button:hover {
     }
 
     #task-form p {
-        font-family: 'Courier New', Courier, monospace;
         font-size: 1em;
         font-weight: 500;
     }
