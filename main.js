@@ -42,7 +42,10 @@ $(document).ready(function () {
 
     function removeTask(index) {
         tasks.splice(index, 1);
-        completedTasks = completedTasks.filter(taskIndex => taskIndex !== index);
+        
+        // Atualize os índices em completedTasks após a remoção
+        completedTasks = completedTasks.map(taskIndex => taskIndex > index ? taskIndex - 1 : taskIndex);
+        
         saveTasksToCookies();
         updateTaskList();
     }
