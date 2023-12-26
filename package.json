@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "TO DO GEN is a versatile checklist generator designed to enhance your task management experience. Featuring a user-friendly interface, this web-based tool empowers users to effortlessly create, organize, and monitor their tasks.",
   "main": "main.js",
-  "keywords": [
-    "Javascript",
-    "Checklist",
-    "Generator",
-    "PHP",
-    "WordPress"
-  ],
+  "keywords": ["JQuery", "Task Management", "To-Do List", "Checklist", "Task Manager", "UX", "Plugin", "UI", "to do interface", "to do"],
   "author": "Biasiolo",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "homepage": "https://to-do-gen.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Biasiolo/to-do-gen"
+  },
+  "bugs": {
+    "url": "https://github.com/Biasiolo/to-do-gen/issues"
+  },
+  "PR": "https://github.com/Biasiolo/to-do-gen/pulls"
 }
