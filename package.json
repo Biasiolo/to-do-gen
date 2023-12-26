@@ -1,9 +1,20 @@
 {
   "name": "to-do-gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TO DO GEN is a versatile checklist generator designed to enhance your task management experience. Featuring a user-friendly interface, this web-based tool empowers users to effortlessly create, organize, and monitor their tasks.",
   "main": "main.js",
-  "keywords": ["JQuery", "Task Management", "To-Do List", "Checklist", "Task Manager", "UX", "Plugin", "UI", "to do interface", "to do"],
+  "keywords": [
+    "JQuery",
+    "Task Management",
+    "To-Do List",
+    "Checklist",
+    "Task Manager",
+    "UX",
+    "Plugin",
+    "UI",
+    "to do interface",
+    "to do"
+  ],
   "author": "Biasiolo",
   "license": "MIT",
   "dependencies": {
