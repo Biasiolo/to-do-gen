@@ -178,7 +178,7 @@ button:hover {
 
 #task-list li.completed:hover {
     color: rgba(5, 5, 5, 0.5);
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 .task-text {
@@ -191,7 +191,7 @@ button:hover {
 /* Media Query for Small Screens */
 @media screen and (max-width: 600px) {
     #task-form {
-        max-width: 90vw;
+        max-width: 80vw;
     }
 
     #new-task {
@@ -199,14 +199,14 @@ button:hover {
     }
 
     button {
-        width: 100%;
+        width: 80%;
     }
 
     #task-list li {
-        width: 40%;
+        width: 35%;
         height: 20vh;
-        font-size: 2em;
-        gap: 5%;
+        font-size: 1em;
+        gap: 3%;
 
     }
 
