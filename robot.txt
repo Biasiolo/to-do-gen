@@ -3,4 +3,4 @@ Disallow: /private/
 Disallow: /secret-page.html
 Disallow: /temp/
 
-Sitemap: https://seusite.com/sitemap.xml
+Sitemap: https://to-do-gen.vercel.app//sitemap.xml
