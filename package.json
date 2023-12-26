@@ -1,7 +1,7 @@
 {
-  "name": "agenda-tarefas",
-  "version": "1.0.1",
-  "description": "Checklist generator",
+  "name": "to-do-gen",
+  "version": "1.0.0",
+  "description": "TO DO GEN is a versatile checklist generator designed to enhance your task management experience. Featuring a user-friendly interface, this web-based tool empowers users to effortlessly create, organize, and monitor their tasks.",
   "main": "main.js",
   "keywords": [
     "Javascript",

@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> <!-- FontAwesome link -->
     <link rel="stylesheet" href="main.css">
-    <title>Gerador de Checklist</title>
+    <title>TO DO GEN</title>
+    <style>
+        #new-task {
+            max-width: 500px;
+        }
+
+        #warning {
+            color: rgb(7, 7, 7);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Gerar Checklist</h1>
+    <h1>TO DO GEN</h1>
     <form id="task-form">
-        <input type="text" id="new-task" placeholder="Adicionar nova tarefa" />
-        <button type="submit">Adicionar</button>
-        <button type="button" id="save-tasks">Salvar Tarefas</button>
+        <p>Insert tasks | Click to mark as done | Delete as needed</p>
+        <input type="text" id="new-task" placeholder="Add new task" oninput="limitInput()" />
+        <div id="warning"></div>
+        <button type="submit">ADD</button>
+        <button type="button" id="save-tasks">SAVE TXT</button>
     </form>
     <ul id="task-list"></ul>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        function limitInput() {
+            var input = document.getElementById("new-task");
+            var warning = document.getElementById("warning");
+
+            var words = input.value.split(/\s+/); // Divide a entrada em palavras
+            var characters = input.value.length;
+
+            if (characters > 35) {
+                // Se exceder o limite, ajuste o valor do input
+                input.value = words.slice(0, 5).join(" ").substring(0, 35);
+
+                // Exiba a mensagem de aviso
+                warning.textContent = "Limite 35 caracteres atingido.";
+            } else {
+                // Limpe a mensagem de aviso
+                warning.textContent = "";
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-

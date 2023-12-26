@@ -3,42 +3,48 @@ $(document).ready(function () {
     var completedTasks = [];
 
     function updateTaskList() {
-        $('#task-list').empty();
+        var taskList = $('#task-list').empty();
+
         tasks.forEach(function (task, index) {
-            var listItem = $('<li><i class="fas fa-arrow-right"></i> ' + task + '<button class="delete-button">X</button></li>');
-            if (completedTasks.indexOf(index) !== -1) {
+            var listItem = $('<li></li>').addClass('task-item');
+            var taskText = $('<span class="task-text">' + task + '</span>');
+            var deleteButton = $('<button class="delete-button">X</button>');
+
+            listItem.append(taskText).append(deleteButton);
+
+            if (completedTasks.includes(index)) {
                 listItem.addClass('completed');
             }
 
             listItem.click(function () {
-                if (listItem.hasClass('completed')) {
-                    listItem.removeClass('completed');
-                    var taskIndex = completedTasks.indexOf(index);
-                    if (taskIndex !== -1) {
-                        completedTasks.splice(taskIndex, 1);
-                    }
-                } else {
-                    listItem.addClass('completed');
-                    completedTasks.push(index);
-                }
-                saveTasksToCookies();
+                toggleTaskCompletion(listItem, index);
             });
 
-            listItem.find('.delete-button').click(function (e) {
+            deleteButton.click(function (e) {
                 e.stopPropagation();
-                var taskIndex = tasks.indexOf(task);
-                if (taskIndex !== -1) {
-                    tasks.splice(taskIndex, 1);
-                    if (completedTasks.indexOf(index) !== -1) {
-                        completedTasks.splice(completedTasks.indexOf(index), 1);
-                    }
-                    listItem.remove();
-                    saveTasksToCookies();
-                }
+                removeTask(index);
             });
 
-            $('#task-list').append(listItem);
+            taskList.append(listItem);
         });
+    }
+
+    function toggleTaskCompletion(listItem, index) {
+        if (listItem.hasClass('completed')) {
+            listItem.removeClass('completed');
+            completedTasks = completedTasks.filter(taskIndex => taskIndex !== index);
+        } else {
+            listItem.addClass('completed');
+            completedTasks.push(index);
+        }
+        saveTasksToCookies();
+    }
+
+    function removeTask(index) {
+        tasks.splice(index, 1);
+        completedTasks = completedTasks.filter(taskIndex => taskIndex !== index);
+        saveTasksToCookies();
+        updateTaskList();
     }
 
     function saveTasksToCookies() {
@@ -86,22 +92,6 @@ $(document).ready(function () {
     });
 
     function showSuccessAlert() {
-        const alertDiv = document.createElement('div');
-        alertDiv.style.position = 'fixed';
-        alertDiv.style.top = '50%';
-        alertDiv.style.left = '50%';
-        alertDiv.style.transform = 'translate(-50%, -50%)';
-        alertDiv.style.background = '#4CAF50';
-        alertDiv.style.color = '#034706';
-        alertDiv.style.padding = '12px';
-        alertDiv.style.borderRadius = '8px';
-        alertDiv.innerHTML = 'Tarefas salvas com sucesso!';
-        document.body.appendChild(alertDiv);
-        setTimeout(function () {
-            document.body.removeChild(alertDiv);
-        }, 3000);
+        // Adicione aqui a lógica para mostrar um alerta de sucesso (opcional).
     }
 });
-
-
-
