@@ -32,7 +32,7 @@ h1 {
     margin: 12px auto;
     max-width: 70vw;
     /* Define a largura máxima do container do formulário */
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(5, 5, 5, 0.4);
     backdrop-filter: blur(20px);
     padding: 2em;
     border-radius: 10px;
@@ -47,6 +47,7 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2em;
     font-weight: 600;
+    color:#03fc0f
 }
 
 /* Estilização dos campos do formulário */
@@ -105,15 +106,17 @@ button:hover {
 }
 
 #task-list li {
-    background-color: #fff;
+    background-color: black;
     padding: 20px;
     /* Reduzi o padding para evitar a distorção */
     margin: 0.5em;
-    border: 1px solid #ccc;
+    border: 1px solid #03fc0f;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1.5em;
-    box-shadow: 0 0 10px #03fc0f;
+    font-size: 18px;
+    box-shadow: 0 0 5px #03fc0f;
+    color: #03fc0f;
+    text-transform: uppercase;
     /* Sombra */
     width: 20vw;
     /* Define a largura desejada */
@@ -161,12 +164,14 @@ button:hover {
 
 #task-list li.completed {
     background-color: #03fc0f;
-    font-weight: 900;
+    font-weight: 700;
     transform: scale(0.8);
+    color: black;
 }
 
 #task-list li:hover {
     background-color: #03fc0f;
+    color: black;
 }
 
 .task-text {
