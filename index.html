@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6MP6J8P3M2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6MP6J8P3M2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-6MP6J8P3M2');
-</script>
+        gtag('config', 'G-6MP6J8P3M2');
+    </script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TO DO GEN - A versatile checklist generator designed for efficient task management. Create, organize, and monitor tasks effortlessly.">
-    <meta name="keywords" content="TO DO GEN, Checklist, Task Management, To-Do List, To Do, JQuery, Web Development, Task Manager, UX, UI">
+    <meta name="description"
+        content="TO DO GEN - A versatile checklist generator designed for efficient task management. Create, organize, and monitor tasks effortlessly.">
+    <meta name="keywords"
+        content="TO DO GEN, Checklist, Task Management, To-Do List, To Do, JQuery, Web Development, Task Manager, UX, UI">
     <meta name="author" content="Biasiolo">
     <meta name="robots" content="index, follow">
 
@@ -76,5 +79,23 @@
             }
         }
     </script>
+
+    <div id="donate-button-container">
+        <div id="donate-button"></div>
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+            PayPal.Donation.Button({
+                env: 'production',
+                hosted_button_id: 'WVP9MCSBKPBXG',
+                image: {
+                    src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                    alt: 'Donate with PayPal button',
+                    title: 'PayPal - The safer, easier way to pay online!',
+                }
+            }).render('#donate-button');
+        </script>
+    </div>
+
 </body>
+
 </html>

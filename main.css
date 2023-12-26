@@ -210,5 +210,15 @@ button:hover {
         font-size: 1em;
         font-weight: 500;
     }
+    #donate-button-container {
+        display: none;
+    }
+}
 
+#donate-button-container {
+    position: fixed;
+    bottom: 25vh;
+    margin-left: 0;
+    transform: rotate(90deg); /* Rotaciona 90 graus no sentido anti-horário */
+    transform-origin: bottom left;
 }
