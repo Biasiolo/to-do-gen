@@ -109,7 +109,7 @@ button:hover {
 /* Estilização do botão "X" nas tarefas */
 #task-list li .delete-button {
     background-color: #9c0a0a;
-    color: #fff;
+    color: black;
     border: none;
     border-radius: 8px;
     font-size: 10px;
@@ -168,9 +168,6 @@ button:hover {
 
     }
 
-    #task-list li:hover {
-        background-color: #67b36b;
-    }
 
     #task-list li.completed {
         background-color: #03fc0f;
