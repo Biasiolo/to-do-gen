@@ -8,7 +8,7 @@
 body {
     font-family: 'Encode Sans SC', sans-serif;
     font-family: 'Roboto', sans-serif;
-    background-color: #0c0c0c;
+    background-color: rgb(28, 28, 28);
     margin: 0;
     padding: 0;
 }
@@ -135,7 +135,7 @@ button:hover {
 
 /* Estilização do botão "X" nas tarefas */
 #task-list li .delete-button {
-    background-color: #9c0a0a;
+    background-color: darkred;
     color: black;
     border: none;
     border-radius: 8px;
@@ -166,13 +166,19 @@ button:hover {
 #task-list li.completed {
     background-color: #03fc0f;
     font-weight: 700;
-    transform: scale(0.8);
-    color: #1f0142;
+    transform: scale(0.6);
+    color: rgba(5, 5, 5, 0.5);
 }
 
 #task-list li:hover {
     background-color: #03fc0f;
     color: black;
+    
+}
+
+#task-list li.completed:hover {
+    color: rgba(5, 5, 5, 0.5);
+    transform: scale(0.8);
 }
 
 .task-text {
