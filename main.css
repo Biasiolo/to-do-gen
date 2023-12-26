@@ -91,7 +91,7 @@ button:hover {
 
 #task-list li {
     background-color: #fff;
-    padding: 40px 20px;
+    padding: 20px; /* Reduzi o padding para evitar a distorção */
     margin: 0.5em;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -102,9 +102,8 @@ button:hover {
     text-align: center; /* Centraliza o texto */
     display: flex; /* Adiciona layout flexível ao li */
     flex-direction: column; /* Alinha os itens verticalmente */
-
+    height: 120px; /* Altura fixa para os cards */
     position: relative; /* Adiciona posição relativa para uso do position absolute no botão */
-
 }
 
 /* Estilização do botão "X" nas tarefas */
